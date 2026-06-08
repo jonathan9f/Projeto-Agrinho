@@ -1,41 +1,33 @@
-/* ==========================================
-   CONFIGURAÇÕES GERAIS E VARIÁVEIS (REGRAS)
-   ========================================== */
+/* VARIÁVEIS DO TEMA MINIMALISTA BRANCO */
 :root {
-    /* Cores sugeridas e selecionadas */
     --cor-fundo: #ffffff;
-    --cor-principal: #1b5e20;     /* Verde Escuro Orgânico */
-    --cor-secundaria: #4caf50;    /* Verde Vivo */
-    --cor-tecnologia: #0288d1;    /* Azul Claro Tecnológico */
-    --cor-texto-escuro: #212121;  /* Cinza quase preto para leitura */
-    --cor-texto-suve: #616161;    /* Cinza médio */
-    --cor-fundo-alternativo: #f5f5f5; /* Cinza bem claro para seções */
-    
-    /* Fontes e Transições */
-    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --transicao-suave: all 0.3s ease;
+    --cor-principal: #2e7d32;     /* Verde principal */
+    --cor-secundaria: #4caf50;    /* Verde claro */
+    --cor-tecnologia: #0288d1;    /* Azul de destaque */
+    --cor-texto: #212121;         /* Texto escuro */
+    --cor-cinza-claro: #f5f5f5;   /* Fundo de blocos */
+    --fonte: Arial, sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte);
 }
 
 html {
-    scroll-behavior: smooth; /* Deixa o scroll suave ao clicar no menu */
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--cor-fundo);
-    color: var(--cor-texto-escuro);
-    line-height: 1.6;
+    color: var(--cor-texto);
+    padding-top: 80px; /* Espaço para o menu fixo não cobrir o conteúdo */
 }
 
-/* Classe utilitária para alinhar o conteúdo no centro da tela */
 .interface {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -44,14 +36,12 @@ body {
     border: 0;
     height: 1px;
     background-color: #e0e0e0;
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
-/* ==========================================
-   CABEÇALHO E MENU RESPONSIVO
-   ========================================== */
+/* HEADER */
 .header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
     position: fixed;
     width: 100%;
@@ -67,349 +57,202 @@ body {
     height: 70px;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--cor-texto-escuro);
-}
-
 .logo h1 span {
     color: var(--cor-principal);
-    font-weight: 700;
 }
 
 .nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: var(--cor-texto-suve);
-    font-size: 0.95rem;
-    transition: var(--transicao-suave);
+    color: var(--cor-texto);
+    font-weight: bold;
 }
 
 .nav-link:hover {
     color: var(--cor-principal);
 }
 
-/* Botão Menu Mobile (Escondido por padrão no PC) */
 .btn-menu {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .btn-menu .linha {
-    width: 28px;
-    height: 2px;
-    background-color: var(--cor-texto-escuro);
-    transition: var(--transicao-suave);
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-texto);
+    transition: 0.3s;
 }
 
-/* ==========================================
-   BANNER PRINCIPAL (HERO)
-   ========================================== */
+/* BANNER */
 .banner {
-    padding-top: 70px; /* Compensa a barra fixa */
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #f1f8e9 0%, #e1f5fe 100%);
+    background: linear-gradient(135deg, #e8f5e9, #e1f5fe);
+    padding: 60px 0;
     text-align: center;
 }
 
-.banner-conteudo {
-    max-width: 700px;
-}
-
 .banner-conteudo h2 {
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: var(--cor-texto-escuro);
-    margin-bottom: 20px;
-}
-
-.banner-conteudo p {
-    font-size: 1.1rem;
-    color: var(--cor-texto-suve);
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .btn-principal {
     display: inline-block;
-    padding: 12px 30px;
+    margin-top: 20px;
+    padding: 10px 25px;
     background-color: var(--cor-principal);
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    font-weight: 600;
-    transition: var(--transicao-suave);
 }
 
-.btn-principal:hover {
-    background-color: var(--cor-secundaria);
-    transform: translateY(-2px);
-}
-
-/* ==========================================
-   SEÇÕES DE CONTEÚDO (INTRODUÇÃO E TITULOS)
-   ========================================== */
+/* INTRO */
 .secao-intro {
-    padding: 60px 0 20px 0;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.secao-intro h2 {
-    font-size: 2rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.subtitulo {
-    color: var(--cor-texto-suve);
-    font-size: 1.1rem;
+    margin: 40px 0;
 }
 
 .titulo-secao {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.titulo-secao h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--cor-principal);
-}
-
-.titulo-secao p {
-    color: var(--cor-texto-suve);
-}
-
-/* ==========================================
-   FUNCIONALIDADE: CARDS INTERATIVOS (GRID)
-   ========================================== */
+/* CARDS */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .card-interativo {
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-cinza-claro);
     border: 1px solid #e0e0e0;
+    padding: 20px;
     border-radius: 6px;
-    padding: 25px;
-    transition: var(--transicao-suave);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card-interativo:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-color: var(--cor-secundaria);
-}
-
-.card-interativo h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--cor-texto-escuro);
-}
-
-.card-interativo .resumo {
-    color: var(--cor-texto-suve);
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-}
-
-/* Escondido por padrão, JavaScript vai mostrar adicionando a classe ativo */
 .conteudo-extra {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
-    font-size: 0.9rem;
-    color: #424242;
-    background-color: var(--cor-fundo-alternativo);
+    transition: max-height 0.3s ease-out;
+    background-color: #ffffff;
     border-radius: 4px;
 }
 
 .conteudo-extra.ativo {
-    max-height: 200px; /* Permite a expansão suave */
+    max-height: 150px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 10px 0;
+    border-left: 3px solid var(--cor-principal);
 }
 
 .btn-card {
-    background: none;
-    border: 1px solid var(--cor-principal);
-    color: var(--cor-principal);
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    align-self: flex-start;
-    transition: var(--transicao-suave);
-}
-
-.btn-card:hover {
     background-color: var(--cor-principal);
     color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
-/* ==========================================
-   FUNCIONALIDADE: CARROSSEL AUTOMÁTICO
-   ========================================== */
+/* CARROSSEL */
 .carrossel-container {
-    max-width: 800px;
+    background-color: var(--cor-cinza-claro);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
     margin: 0 auto;
-    position: relative;
-    background-color: var(--cor-fundo-alternativo);
-    border-left: 4px solid var(--cor-tecnologia);
-    border-radius: 4px;
-    padding: 40px;
-    overflow: hidden;
+    border-top: 4px solid var(--cor-tecnologia);
 }
 
 .slide {
     display: none;
-    animation: fade 0.8s ease;
 }
 
 .slide.ativo {
     display: block;
 }
 
-.slide-info h3 {
-    font-size: 1.4rem;
-    color: var(--cor-tecnologia);
-    margin-bottom: 15px;
-}
-
 .carrossel-indicadores {
-    text-align: center;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .ponto {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background-color: #ccc;
     display: inline-block;
+    margin: 0 5px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: var(--transicao-suave);
 }
 
-.ponto.ativo, .ponto:hover {
+.ponto.ativo {
     background-color: var(--cor-tecnologia);
-    transform: scale(1.2);
 }
 
-@keyframes fade {
-    from { opacity: 0.4; } 
-    to { opacity: 1; }
-}
-
-/* ==========================================
-   SEÇÃO IMPACTOS E CONCLUSÃO
-   ========================================== */
+/* IMPACTOS E CONCLUSÃO */
 .grid-impactos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
-.item-impacto h4 {
-    color: var(--cor-texto-escuro);
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 5px;
-}
-
-.item-impacto p {
-    font-size: 0.95rem;
-    color: var(--cor-texto-suve);
+.item-impacto {
+    background-color: #fafafa;
+    padding: 15px;
+    border-top: 3px solid var(--cor-secundaria);
 }
 
 .caixa-conclusao {
-    background-color: #f1f8e9;
-    padding: 40px;
+    background-color: #e8f5e9;
+    padding: 30px;
     text-align: center;
-    border-radius: 6px;
-    max-width: 800px;
-    margin: 0 auto;
+    border-radius: 8px;
 }
 
-.caixa-conclusao h2 {
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-.caixa-conclusao p {
-    font-style: italic;
-    color: var(--cor-principal);
-}
-
-/* ==========================================
-   FOOTER (RODAPÉ)
-   ========================================== */
+/* FOOTER */
 .footer {
-    border-top: 1px solid #e0e0e0;
-    padding: 30px 0;
-    margin-top: 60px;
     text-align: center;
-    font-size: 0.9rem;
-    color: var(--cor-texto-suve);
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
 }
 
-/* ==========================================
-   RESPONSIVIDADE (MOBILE / TABLET)
-   ========================================== */
+/* RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
     .btn-menu {
-        display: flex; /* Exibe o botão hambúrguer */
+        display: flex;
     }
 
     .nav-menu {
         position: absolute;
         top: 70px;
-        left: -100%; /* Esconde o menu para a esquerda */
+        left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--cor-fundo);
+        height: 300px;
+        background-color: #ffffff;
         flex-direction: column;
         align-items: center;
-        padding-top: 50px;
-        transition: var(--transicao-suave);
-        border-top: 1px solid #e0e0e0;
+        justify-content: center;
+        transition: 0.3s;
+        border-bottom: 1px solid #e0e0e0;
     }
 
-    /* Classe ativada via JavaScript */
     .nav-menu.ativo {
-        left: 0; /* Traz o menu para a tela */
-    }
-
-    /* Animação do botão Hambúrguer transformando em 'X' */
-    .btn-menu.aberto .linha:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .btn-menu.aberto .linha:nth-child(2) {
-        opacity: 0;
-    }
-    .btn-menu.aberto .linha:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -7px);
-    }
-
-    .banner-conteudo h2 {
-        font-size: 2rem;
+        left: 0;
     }
 }
